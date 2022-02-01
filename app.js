@@ -14,26 +14,18 @@ var setAnswers = function(idFormularioPregunta){
 })
 };
 
-$(document).ready(function() {
-    $('#botonEnviar').click(function () {
 
+document.getElementById('BotonPrueba').addEventListener('click', ()=>{
+    var nombre1 = "Braulio";
+    var nombre2 = "Nicolas";
+    var nombre3 = "Yayo";
 
-      var respuestapreg1 = $('#txtfirstname').val();
-      var respuestapreg2 = $('#txtlasttname').val();
-      var respuestapreg3 = $('#txtemail').val();
-      var respuestapreg4 = $('#txtfirstname').val();
-      var respuestapreg5 = $('#txtlasttname').val();
-
-      var userDetails = firstname + ' ' + lastname + ' ' + email;
-
-      var blob = new Blob([userDetails],
-      {
-          type:"application/json;utf - 8"
-      }
-    )
+    var nombresCombinados = nombre1 + ' ' + nombre2 + ' ' + nombre3;
+    var blob = new Blob([nombresCombinados], {
+      type:"application/json;utf - 8"
+    })
     var userLink = document.createElement('a');
-    userLink.setAttribute('download', firstname + '.txt');
+    userLink.setAttribute('download', "descarga.txt");
     userLink.setAttribute('href', window.URL.createObjectURL(blob));
     userLink.click();
-  });
-});
+})
