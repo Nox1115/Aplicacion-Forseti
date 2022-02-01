@@ -15,7 +15,7 @@ var setAnswers = function(idFormularioPregunta){
 };
 
 
-document.getElementById('BotonPrueba').addEventListener('click', ()=>{
+document.getElementById('BotonEnviar').addEventListener('click', ()=>{
     var nombreEncuestado = document.getElementById('nombre').value();
     var respuestaPregunta1 = setAnswers('pregunta1');
     var respuestaPregunta2 = setAnswers('pregunta2');
