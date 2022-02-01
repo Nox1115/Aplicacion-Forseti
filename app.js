@@ -16,16 +16,19 @@ var setAnswers = function(idFormularioPregunta){
 
 
 document.getElementById('BotonPrueba').addEventListener('click', ()=>{
-    var nombre1 = "Braulio";
-    var nombre2 = "Nicolas";
-    var nombre3 = "Yayo";
+    var nombreEncuestado = document.getElementById('nombre').value();
+    var respuestaPregunta1 = setAnswers('pregunta1');
+    var respuestaPregunta2 = setAnswers('pregunta2');
+    var respuestaPregunta3 = setAnswers('pregunta3');
+    var respuestaPregunta4 = setAnswers('pregunta4');
+    var respuestaPregunta5 = setAnswers('pregunta5');
 
-    var nombresCombinados = nombre1 + ' ' + nombre2 + ' ' + nombre3;
-    var blob = new Blob([nombresCombinados], {
+    var respuestasGuardadas = nombreEncuestado + ' sus respuestas:[' + respuestaPregunta1 + ', ' + respuestaPregunta2 + ', ' + respuestaPregunta3 + ', ' + respuestaPregunta4 + ', ' + respuestaPregunta5 + '].';
+    var blob = new Blob([respuestasGuardadas], {
       type:"application/json;utf - 8"
     })
     var userLink = document.createElement('a');
-    userLink.setAttribute('download', "descarga.txt");
+    userLink.setAttribute('download', "respuestas.txt");
     userLink.setAttribute('href', window.URL.createObjectURL(blob));
     userLink.click();
 })
